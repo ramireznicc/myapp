@@ -1,35 +1,32 @@
 import { StyleSheet } from "react-native";
 
+import { COLORS } from "../../theme";
+
 export const styles = StyleSheet.create({
   taskCard: {
-    backgroundColor: "#32a4a7",
     padding: 10,
     borderRadius: 8,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 1.5,
-    elevation: 2,
+    borderColor: COLORS.disabled,
+    borderWidth: 0.5,
+    shadowColor: COLORS.black,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
   taskText: {
     fontWeight: "bold",
-    fontSize: 16,
-    color: "#282828",
+    fontSize: 18,
+    color: COLORS.primary,
   },
   done: {
-    color: "#282828",
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     paddingHorizontal: 11,
     borderRadius: 8,
+    borderColor: COLORS.disabled,
+    borderWidth: 0.5,
     opacity: 0.9,
   },
   doneText: {
-    color: "#32a4a7",
+    color: COLORS.primary,
   },
 });

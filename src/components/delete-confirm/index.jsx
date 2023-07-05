@@ -1,6 +1,7 @@
 import { View, Text, Button } from "react-native";
 
 import { styles } from "./styles";
+import { COLORS } from "../../theme";
 
 const DeleteConfirm = ({ selectedTask, handlerCancel, handlerDelete }) => {
   return (
@@ -11,7 +12,11 @@ const DeleteConfirm = ({ selectedTask, handlerCancel, handlerDelete }) => {
         </Text>
         <Text style={styles.modalTask}>{selectedTask?.value}</Text>
         <View style={styles.modalButtons}>
-          <Button color="#32a4a7" title="Cancel" onPress={handlerCancel} />
+          <Button
+            color={COLORS.primary}
+            title="Cancel"
+            onPress={handlerCancel}
+          />
           <Button color="red" title="Delete" onPress={handlerDelete} />
         </View>
       </View>

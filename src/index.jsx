@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, SafeAreaView, Modal } from "react-native";
+import { View, SafeAreaView, StatusBar, Modal, StyleSheet } from "react-native";
 
 import {
   InputTask,
@@ -7,7 +7,7 @@ import {
   TaskList,
   DeleteConfirm,
 } from "./components/index";
-import { styles } from "./styles";
+import { COLORS } from "./theme";
 
 export default function App() {
   const [task, setTask] = useState("");
@@ -17,11 +17,11 @@ export default function App() {
   const [selectedTask, setSelectedTask] = useState(true);
 
   const handlerFocus = () => {
-    setBorderColor("#32a4a7");
+    setBorderColor(COLORS.primary);
   };
 
   const handlerBlur = () => {
-    setBorderColor("#cecece");
+    setBorderColor(COLORS.disabled);
   };
 
   const handlerChage = (text) => {
@@ -35,7 +35,7 @@ export default function App() {
         id: Date.now().toString(),
         value: task,
         isDone: false,
-        backgroundColor: "#32a4a7",
+        backgroundColor: COLORS.background,
       },
     ]);
 
@@ -108,3 +108,15 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+    marginHorizontal: 20,
+  },
+  safeArea: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+});

@@ -1,6 +1,7 @@
 import { View, TextInput, Button } from "react-native";
 
 import { styles } from "./styles";
+import { COLORS } from "../../theme";
 
 const InputTask = ({
   borderColor,
@@ -17,9 +18,9 @@ const InputTask = ({
         placeholder="add task"
         autoCapitalize="none"
         autoCorrect={false}
-        selectionColor="#32a4a7"
-        cursorColor="#282828"
-        placeholderTextColor="#cecece"
+        selectionColor={COLORS.primary}
+        cursorColor={COLORS.grey}
+        placeholderTextColor={COLORS.disabled}
         onFocus={handlerFocus}
         onBlur={handlerBlur}
         onChangeText={handlerChage}
@@ -28,7 +29,7 @@ const InputTask = ({
       <Button
         title="Add"
         disabled={task === ""}
-        color="#32a4a7"
+        color={COLORS.primary}
         onPress={handlerCreateTask}
       />
     </View>

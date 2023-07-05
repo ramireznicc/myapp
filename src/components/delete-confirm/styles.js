@@ -1,17 +1,19 @@
 import { StyleSheet } from "react-native";
 
+import { COLORS } from "../../theme";
+
 export const styles = StyleSheet.create({
   modalContainer: {
     backgroundColor: "rgba(0,0,0,0.2)",
     flex: 1,
-    gap: 10,
     alignItems: "center",
     justifyContent: "center",
   },
   modalCont: {
+    gap: 14,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     padding: 22,
     borderRadius: 8,
   },
